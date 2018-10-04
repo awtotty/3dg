@@ -7,6 +7,6 @@ Clone or download the source code. If you download the `zip` file, extract the c
 ## Wish list
 - User controls for graph options.
 - Better layout.
-- KaTeX integration for better equation displays. 
+- [MathQuill](https://github.com/mathquill/mathquill)/[KaTeX](https://github.com/Khan/KaTeX) integration for better equation displays. 
 - Multiple functions graphed at once. 
 - Clever equation parsing (ex: sinx instead of Math.sin(x)). 
