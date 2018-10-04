@@ -9,4 +9,4 @@ Clone or download the source code. If you download the `zip` file, extract the c
 - Better layout.
 - KaTeX integration for better equation displays. 
 - Multiple functions graphed at once. 
-- Clever equation parsing (ex: sin(x) instead of Math.sin(x)). 
+- Clever equation parsing (ex: sinx instead of Math.sin(x)). 
