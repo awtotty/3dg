@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>3dj</title>
+    <script src="vis.min.js"></script>
+    <script src="3dj.js"></script>
+	<head>
+	<body>
+    <h3>Enter a function in javascript to see the graph</h3>
+
+    <div id="input">
+    f(x,y) = <input type="text" id="fname" size="50" onkeyup="setFunction();startTimer()">
+    </div>
+
+    <!-- 3D Graph -->
+    <div id="visualization" style="width:200px;height:1000px;">
+    <script type="text/javascript">graph();</script>
+    </div>
+
+	</body>
+</html>
