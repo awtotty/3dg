@@ -1,5 +1,5 @@
 # 3dg
-3dg is a simple web application that generates graphs of multivariable functions using [`vis.js`](http://visjs.org/). 
+3dg is a simple web application that generates graphs of multivariable functions using [`vis.js`](http://visjs.org/). Much of this code was borrowed from the `vis.js` tutorials. 
 
 ## How to use
 Clone or download the source code. If you download the `zip` file, extract the contents to your desired location. Open `3dg.html`. 
