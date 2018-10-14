@@ -1,9 +1,10 @@
 // function for testing: Math.sin(x/50) * Math.cos(y/50) * 50 + 50
 
 // create expression variable?
-var fString = "0";
+var fString = "Math.sin(x/50)*Math.cos(y/50)*50 + 50";
 var typingTimer;                //timer identifier
 var doneTypingInterval = 1500;  //time in ms, 5 second for example
+// document.getElementById("fname").defaultValue = "Goofy";
 
 //on keyup, start the countdown
 function startTimer() {
@@ -36,7 +37,6 @@ function f(x,y) {
 function graph() {
   // Create blank data set and populate a data table.
   var data = new vis.DataSet();
-  // create some nice looking data with sin/cos
   var counter = 0;
   var steps = 25;  // number of datapoints will be steps*steps
   var axisMax = 314;
@@ -62,5 +62,12 @@ function graph() {
 
   // Instantiate our graph object.
   var container = document.getElementById('visualization');
-  var graph3d = new vis.Graph3d(container, data, options);
+  try {
+    var graph3d = new vis.Graph3d(container, data, options);
+  } catch (e) {
+    console.log("Unable to produce graph.");
+    var data = new vis.DataSet();
+    data.add({id:0,x:0,y:0,z:0,style:value});
+    var graph3d = new vis.Graph3d(container, data, options);
+  }
 }
