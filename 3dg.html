@@ -12,22 +12,16 @@
 
     <!-- Function input --> 
     <div id="input">
-    f(x,y) = <input type="text" id="fname" size="50" onkeyup="setFunction();startTimer()" placeholder="Math.sin(x/50)*Math.cos(y/50)*50+50">
+    f(x,y) = <input type="text" id="fname" size="50" onkeyup="startTimer()" placeholder="Math.sin(x/50)*Math.cos(y/50)*50+50">
     </div>
 
     <!-- User params --> 
     <div id="params">
 	<br>
-	xMin = <input type="text" size="10" onkeyup="setFunction();startTimer()">
-	xMax = <input type="text" size="10" onkeyup="setFunction();startTimer()">
-	<br>
-	yMin = <input type="text" size="10" onkeyup="setFunction();startTimer()">
-	yMax = <input type="text" size="10" onkeyup="setFunction();startTimer()">
-	<br>
-	zMin = <input type="text" size="10" onkeyup="setFunction();startTimer()">
-	zMax = <input type="text" size="10" onkeyup="setFunction();startTimer()">
-	<br>
-	steps = <input type="text" size="10" onkeyup="setFunction();startTimer()">
+	Axis Min = <input id="axisMin" type="text" size="10" onkeyup="startTimer()" placeholder="0">
+	Axis Max = <input id="axisMax" type="text" size="10" onkeyup="startTimer()" placeholder="314">
+	<br><br>
+	steps = <input id="steps" type="text" size="10" onkeyup="startTimer()" placeholder="25">
     </div>	    
 
     <!-- 3D Graph -->

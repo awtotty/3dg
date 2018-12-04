@@ -6,7 +6,7 @@ Clone or download the source code. If you download the `zip` file, extract the c
 
 ## Wish list
 - Catch undefined values of the function.
-- User controls for graph options.
+- ~~User controls for graph options.~~
 - Better layout.
 - [MathQuill](https://github.com/mathquill/mathquill)/[KaTeX](https://github.com/Khan/KaTeX) integration for better equation displays. 
 - Multiple functions graphed at once. 
