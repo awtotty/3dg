@@ -5,9 +5,9 @@
 Clone or download the source code. If you download the `zip` file, extract the contents to your desired location. Open `3dg.html`. 
 
 ## Wish list
-- []Catch undefined values of the function.
+- [ ]Catch undefined values of the function.
 - [x] User controls for graph options.
-- [] Better layout.
-- [] [MathQuill](https://github.com/mathquill/mathquill)/[KaTeX](https://github.com/Khan/KaTeX) integration for better equation displays. 
-- [] Multiple functions graphed at once. 
-- [] Clever equation parsing (ex: sinx instead of Math.sin(x)). 
+- [ ] Better layout.
+- [ ] [MathQuill](https://github.com/mathquill/mathquill)/[KaTeX](https://github.com/Khan/KaTeX) integration for better equation displays. 
+- [ ] Multiple functions graphed at once. 
+- [ ] Clever equation parsing (ex: sinx instead of Math.sin(x)). 
