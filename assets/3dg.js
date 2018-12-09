@@ -1,6 +1,6 @@
 /*
- * Code for getting and using user form data to create and display a 3d graph 
- * of a function on the page. 
+ * Code for getting and using user form data to create and display a 3d graph
+ * of a function on the page.
  */
 
 // Default function string for initial display
@@ -8,7 +8,7 @@ var fString = "Math.sin(x/50)*Math.cos(y/50)*50 + 50"; // fString is the string 
 var useDefaultFunction = true;	// boolen for using default fString
 
 // Vars for axis params and density of mesh
-var axisMin, axisMax, steps; 
+var axisMin, axisMax, steps;
 var stepCap = 150; // maximum number of steps allowed to prevent performance issues
 
 var typingTimer;                // timer identifier
@@ -31,26 +31,26 @@ function setFunction() {
   if (!useDefaultFunction)
     fString = document.getElementById("fname").value;
   // console.log(new Function("x","y", "return " + fString));
-  
+
   // if default funciton has been used once, don't use it again
-  useDefaultFunction = false; 
+  useDefaultFunction = false;
 }
 
 function setParams() {
   // if any of these is not defined, use default values
   axisMin = document.getElementById("axisMin").value
   if (axisMin === "" || isNaN(axisMin))
-    axisMin = 0; 
- 
+    axisMin = 0;
+
   axisMax = document.getElementById("axisMax").value
   if (axisMax === "" || isNaN(axisMax))
-    axisMax = 314; 
-	
+    axisMax = 314;
+
   // number of data points will be steps*steps
   steps = document.getElementById("steps").value
   if (steps === "" || isNaN(steps))
     steps = 25;
-  if (steps > stepCap) // TODO tell user about cap and actual steps val 
+  if (steps > stepCap) // TODO tell user about cap and actual steps val
     steps = stepCap
 }
 
@@ -62,29 +62,30 @@ function f(x,y) {
   try {
     var func = new Function("x","y", "return " + fString + ";");
     return func(x,y);
-  } catch(err) { // TODO move catch to graph and break loop so default graph displays? 
-    return 0;	// TODO but then a single undefined point on the graph will kill the graph.  
+  } catch(err) { // TODO move catch to graph and break loop so default graph displays?
+    return 0;	// TODO but then a single undefined point on the graph will kill the graph.
   }
 }
 
 // Creates the graph of the function. Called after the timer reaches doneTypingInterval
 function graph() {
-  // update function string 
+  // update function string
   setFunction();
 
   // get params from user
-  setParams(); 
+  setParams();
 
-  var counter = 0; // creates ids for the points 
-  var axisStep = axisMax / steps;
-  
-  // create blank data set to populate with point data 
+  var counter = 0; // creates ids for the points
+  var axisStep = (axisMax-axisMin) / steps; // TODO: correct value?
+
+  // create blank data set to populate with point data
   var data = new vis.DataSet();
-  
+
   // build data points
-  for (var x = 0; x < axisMax; x+=axisStep) {
-      for (var y = 0; y < axisMax; y+=axisStep) {
-          var z = f(x,y); //  
+  for (var x = axisMin; x < axisMax; x+=axisStep) {
+      for (var y = axisMin; y < axisMax; y+=axisStep) {
+          console.log("(" + x + ", " + y + ")"); // TODO: major crashing for axisMin not 0. 
+          var z = f(x,y); //
           data.add({id:counter++, x:x, y:y, z:z, style:z});
       }
   }
